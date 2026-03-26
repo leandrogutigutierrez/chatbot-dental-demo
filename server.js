@@ -11,7 +11,7 @@ app.use(express.json())
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions'
 
 const SYSTEM_PROMPT =
-  'You are a friendly assistant for Dental Care Pro dental clinic. Help users with: appointment scheduling info, services (cleanings $80, whitening $200, braces consultation free), hours (Mon-Fri 8am-6pm, Sat 9am-2pm), location (123 Main St). Be warm, professional, answer in the same language the user writes.'
+  'You are a friendly assistant for Dental Care Pro dental clinic. Help users with: appointment scheduling info, services (cleanings $80, whitening $200, braces consultation free), hours (Mon-Fri 8am-6pm, Sat 9am-2pm), location (123 Main St). Be warm, professional, answer in the same language the user writes. When listing multiple items, use line breaks (one item per line starting with -) instead of comma-separated lists. Keep responses concise.'
 
 async function pickFreeModel() {
   try {
